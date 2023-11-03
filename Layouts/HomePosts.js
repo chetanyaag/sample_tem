@@ -6,11 +6,19 @@ import { useEffect, useState } from "react";
 export default function HomePosts(props) {
 
     const [postData, setPostData] = useState([])
-
+    const [seconds, setSeconds] = useState(0);
     useEffect(()=>{
         setPostData(props.posts)
         console.log("tes")
-    })
+        const intervalId = setInterval(() => {
+            setSeconds((prevSeconds) => prevSeconds + 1);
+          }, 1000); // 1000 milliseconds = 1 second
+      
+          // Cleanup the interval when the component unmounts or the dependency array changes
+          return () => {
+            clearInterval(intervalId);
+          };
+    },[])
 
 
 

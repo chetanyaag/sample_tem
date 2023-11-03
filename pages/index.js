@@ -10,11 +10,11 @@ export default function Home() {
 
   const handleOnPostDone = (data1) =>{
     var newData = data;
-    // newData.push(data1)
+    newData.push(data1)
     // console.log(data1)
-    data.push(data1)
-    console.log(data)
-    // setdData(newData)
+    // data.push(data1)
+    // console.log(data)
+    setdData(newData)
   }
 
   return (
